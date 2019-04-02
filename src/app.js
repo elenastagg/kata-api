@@ -1,24 +1,11 @@
 const express = require('express');
-const strings = require('./lib/strings.js');
+const stringsRouter = require('./routes/strings.js');
+const numbersRouter = require('./routes/numbers.js');
 
 const app = express();
 
-app.get('/strings/hello/:string', (req, res) => {
-  res.status(200).send({ result: strings.sayHello(req.params.string) });
-});
-
-app.get('/strings/upper/:string', (req, res) => {
-  res.status(200).send({ result: strings.uppercase(req.params.string) });
-});
-
-app.get('/strings/lower/:string', (req, res) => {
-  res.status(200).send({ result: strings.lowercase(req.params.string) });
-});
-
-app.get('/strings/first-characters/:string', (req, res) => {
-  res.status(200).send({
-    result: strings.firstCharacters(req.params.string, req.query.length || 1),
-  });
-});
+app.use(express.json());
+app.use('/strings', stringsRouter);
+app.use('/numbers', numbersRouter);
 
 module.exports = app;
