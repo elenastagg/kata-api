@@ -19,11 +19,11 @@ const one = (a, b) => {
 };
 
 const truthiness = (a) => {
- return Boolean(a);
+  return Boolean(a);
 };
 
 const isEqual = (a, b) => {
-return a === b;
+  return a === b;
 };
 
 const isGreaterThan = (a, b) => {
@@ -76,5 +76,5 @@ module.exports = {
   isSquare,
   startsWith,
   containsVowels,
-  isLowerCase
-}
+  isLowerCase,
+};

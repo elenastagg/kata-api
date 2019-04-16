@@ -1,5 +1,4 @@
 const express = require('express');
-const numbers = require('../lib/numbers.js');
 const numbersController = require('../controllers/numbers.js');
 
 const router = express.Router();
